@@ -1,6 +1,3 @@
-const { DataTypes } = require("sequelize/types");
-const { sequelize } = require(".");
-
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
         id:{
@@ -37,12 +34,14 @@ module.exports = (sequelize, DataTypes) => {
             allowNull:true
           },
           createdAt:{
-            field:'created_at',
             type:DataTypes.DATE,
+            field:'created_at',
+            allowNull:false,
           },
           updatedAt:{
-            field:'updated_at',
             type:DataTypes.DATE,
+            field:'updated_at',
+            allowNull:false,
           },
     }, {
         tableName:'users',
